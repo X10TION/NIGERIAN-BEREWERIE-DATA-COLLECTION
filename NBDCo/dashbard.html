@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ac179a7617.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./layoutNDC/dashboard.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="loginpage.html">
+                    <img src="resource/LOGSMALhin 2.png" alt="NBDCo" width="28" height="112">
+                    NBDCo
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-contain">
+        <div class="crud-contain">
+            <div class="crud-header">
+                <h1>NBDCo791 System </h1><button class="button is-success" id="openRegisterModel">
+                    <i class="fas fa-plus"></i><span>Insert Record</span>
+                </button>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>*</th>
+                        <th>user</th>
+                        <th>email</th>
+                        <th>phone</th>
+                        <th>address</th>
+                        <th>operation</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+
+    <div class="modal" id="model">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">OUTLET INFORMATION</p>
+                <button class="delete" aria-label="close" id="closeRegistermodel"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+                <form id="registration-form">
+                    <div class="field">
+                        <label class="label">Outlet Name:</label>
+                        <div class="control">
+                            <input class="input" type="text" name="firstName" placeholder="firstName" required>
+                            
+                        </div>
+                        <p class="help">First name of the outlet owner</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Outlet Middle:</label>
+                        <div class="control">
+                            <input class="input" type="text" name="middleName" placeholder="middleName" required>
+                        </div>
+                        <p class="help">Middle name of the Outlet owner (Optional)</p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Outlet Last Name:</label>
+                        <div class="control">
+                            <input class="input" type="text" name="lastName" placeholder="lastName" required>
+                        </div>
+                        <p class="help">Last name of the outlet owner</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Phone:</label>
+                        <div class="control">
+                            <input class="input" type="tel" name="phone" placeholder="(+234)" required>
+                        </div>
+                        <p class="help">Mobile number of the outlet owner</p>
+                    </div>
+                
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" type="submit"> 
+                    <i class="fas fa-save"></i><span>
+                    Save changes</span></button>
+                <button class="button" id="update">Update</button>
+            </footer>
+        </form>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://use.fontawesome.com/5ef86f8e62.js"></script>
+    <script src="scriptNDC/dashbord.js"></script>
+</body>
+
+</html>

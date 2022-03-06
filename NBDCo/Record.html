@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBDCo SYSTEM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/ac179a7617.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./layoutNDC/dashboard.css">  
+</head>
+  <body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="loginpage.html">
+                    <img src="resource/LOGSMALhin 2.png" alt="NBDCo" width="28" height="112">
+                    NBDCo
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+  
+    <article class="message is-primary">
+        <div class="message-header">
+          <p>OUTLET RECORD SYSTEM</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+        </div>
+      </article>
+
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">OUTLET INFORMATION</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button">Cancel</button>
+          </footer>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="notification is-primary">
+          <strong>centered</strong> on desktop and larger viewports.
+        </div>
+        <br>
+      <button class="button is-primary is-rounded" id="openRegisterModel"><i class="fas fa-plus"></i><span></span>New Record</button>
+      <span> </span>
+      <button class="button is-link is-rounded" id="openRegisterModel" disabled><i class="fas fa-upload"></i><span></span>Update</button>
+      <span> </span>
+      <button class="button is-link is-rounded" disabled ><i class="fas fa-trash"></i><span></span>
+      Delete Outlet</button>
+      <span> </span>
+      <button class="button is-info is-rounded" disabled><i class="fas fa-eye" ></i><span></span>View Outlet</button>
+      </div>
+
+      <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">OUTLET INFORMATION</p>
+            <button class="delete" aria-label="close" id="closeRegistermodel"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+            <form id="registration-form">
+                <div class="control">
+                    <div class="select">
+                      <select value="Mr" id="titleOUTLET" onChange="Ready()" >
+                        <option value="Mr">Mr</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Alh">Alh</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Dr">Dr</option>
+                        </select>
+                    </div>
+                  </div>
+              <div class="field">
+                  <label class="label">Outlet Name:</label>
+                  <div class="control">
+                      <input class="input" type="text" id="firstName" placeholder="firstName" required>
+                      
+                  </div>
+                  <p class="help">First name of the outlet owner</p>
+              </div>
+              <div class="field">
+                  <label class="label">Outlet Middle:</label>
+                  <div class="control">
+                      <input class="input" type="text" id="middleName" placeholder="middleName" required>
+                  </div>
+                  <p class="help">Middle name of the Outlet owner (Optional)</p>
+              </div>
+
+              <div class="field">
+                  <label class="label">Outlet Last Name:</label>
+                  <div class="control">
+                      <input class="input" type="text" id="lastName" placeholder="lastName" required>
+                  </div>
+                  <p class="help">Last name of the outlet owner</p>
+              </div>
+              <div class="field">
+                  <label class="label">SEM CODE</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Code of the Outlet" id="Code">
+                  </div>
+                  <p class="help">This is a help text</p>
+                </div>
+              <div class="field">
+                  <label class="label">Phone:</label>
+                  <div class="control">
+                      <input class="input" type="tel" id="phone" placeholder="(+234)" required>
+                  </div>
+                  <p class="help">Mobile number of the outlet owner</p>
+              </div>
+              <div class="field">
+                  <p class="control has-icons-left">
+                    <span class="select">
+                      <select id="Country">
+                        <option selected >Country</option>
+                        <option id="Nigeria">Nigeria</option>
+                        <option disabled>other</option>
+                      </select>
+                    </span>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-globe"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                    <label class="label">State</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="State" id="state">
+                    </div>
+                    <p class="help">Geographical location of the Retail outlet and should contain: State of the outlet where the outlet is resident e,g Lagos, Edo, Oyo etc
+                        Local Government 	Geographical location of the Retail outlet and should contain:Local Government of the outlet where the outlet is resident e,g Surulere, Apapa, Amuwo Odofin etc</p>
+                  </div>
+                  <div class="field">
+                      <label class="label">L.G.A</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="L.G.A" id="lga">
+                      </div>
+                      <p class="help">Geographical location of the Retail outlet and should contain:Local Government of the outlet where the outlet is resident e,g Surulere, Apapa, Amuwo Odofin etc</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">City</label>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="city" id="City">
+                        </div>
+                        <p class="help">Geographical location of the Retail outlet and should contain:City of the outlet where the outlet is resident e,g Festac, Apapa, Amuwo  etc</p>
+                      </div>
+                      <div class="field">
+                          <label class="label">Country 2</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Country 2" id="Country2">
+                          </div>
+                          <p class="help">Hierarchical resident of the Retail Outlet  'Nigeria" is expected here</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Zone</label>
+                            <div class="control">
+                              <input class="input" type="text" placeholder="Zone" id="Zone" required>
+                            </div>
+                            <p class="help">Hierarchical resident of the Retail Outlet and it should contain: Zone of the outlet where the outlet resident e,g West Zone or East Zone or North Zone</p>
+                          </div>
+                          <div class="field">
+                              <label class="label">Region</label>
+                              <div class="control">
+                                <input class="input" type="text" placeholder="Region" id="Region">
+                              </div>
+                              <p class="help">Hierarchical resident of the Retail Outlet and it should contain: Region of the outlet where the outlet resident e,g Lagos Island Region, Ibadan Region , Jos Region etc</p>
+                            </div>
+                            <div class="field">
+                                <label class="label">Sales Area</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="Sales Area" id="SalesArea">
+                                </div>
+                                <p class="help">ierarchical resident of the Retail Outlet and it should contain: Sales Area  of the outlet where the outlet resident e,g Yaba SA, Epe SA, Ibdan North SA, Abeokuta SA etc</p>
+                              </div>
+                              <div class="field">
+                                  <label class="label">Territory</label>
+                                  <div class="control">
+                                    <input class="input" type="text" placeholder="Territory" id="Territory">
+                                  </div>
+                                  <p class="help">Hierarchical resident of the Retail Outlet and it should contain: Territory of the outlet where the outlet resident e,g Yab KAE 01, Epe KAE 01,  Abe KAE 01 etc</p>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Sector/Cluster</label>
+                                    <div class="control">
+                                      <input class="input" type="text" placeholder="Sector/Cluster" id="SectorCluster">
+                                    </div>
+                                    <p class="help">Hierarchical resident of the Retail Outlet and it should contain: Sales Executive cluster coverage where the outlet resident e,g Yab 01, Epe 01,  Abe 01 etc</p>
+                                  </div>
+                                  <div class="field">
+                                      <label class="label">Section</label>
+                                      <div class="control">
+                                        <input class="input" type="text" placeholder="Section" id="Section">
+                                      </div>
+                                      <p class="help">Hierarchical resident of the Retail Outlet and it should contain: LAR/VSM coverage where the outlet resident e,g Yab 01 SEC 01, Epe 01 SEC 02,  Abe 01 SEC 01 etc</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Classification</label>
+                                        <div class="control">
+                                          <input class="input" type="text" placeholder="Classification" id="Classification">
+                                        </div>
+                                        <p class="help">Tier of the Retail outlet</p>
+                                      </div>
+                                      <div class="field">
+                                          <label class="label">Visit Frequency</label>
+                                          <div class="control">
+                                            <input class="input" type="text" placeholder="Visit Frequency" id="VisitFrequency">
+                                          </div>
+                                          <p class="help">This is a help text</p>
+                                        </div>
+
+                                        <div class="control">
+                                            <div class="select">
+                                              <select id="BusinessSegment" onChange="Ready()" >
+                                                <option value="Nill">Business Segment</option>
+                                                <option value="on">on</option>
+                                                <option value="off">off</option>
+                                              </select>
+                                            </div>
+                                          </div> 
+                                          <br>
+                                          <div class="field has-addons">
+                                              <div class="control">
+                                                <input class="input" type="text" placeholder="Latitude" id="Latitude" id="Latitude">
+                                              </div>
+                                              <div class="control" onclick="getLocation()">
+                                                <a class="button is-info">
+                                                    Latitude
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <div class="field has-addons">
+                                                <div class="control">
+                                                  <input class="input" type="text" placeholder="Longitude" id="Longitude" id="Longitude">
+                                                </div>
+                                                <div class="control" onclick="getLocation()">
+                                                  <a class="button is-info">
+                                                      Longitude
+                                                  </a>
+                                                </div>
+                                              </div>
+                                              <div class="field">
+                                                  <label class="label">Address</label>
+                                                  <div class="control">
+                                                    <input class="input" type="text" placeholder="House Number" id="houseNo">
+                                                  </div>
+                                                  <p class="help">This represents number of the house, street, close, road etc, Should there be a situation where by there is no number then input Zero</p>
+                                                </div>
+                                                <div class="field">
+                                                    
+                                                    <div class="control">
+                                                      <input class="input" type="text" placeholder="Street 1" id="Street1">
+                                                    </div>
+                                                    <p class="help">This field should contain:Street Name - Avenue - Close - Drive - Crescent - Way - Layout - Bypass - Expressway - Lane - Bourlevard - Km+Road</p>
+                                                  </div>
+                                                  <div class="field">
+                                                    
+                                                      <div class="control">
+                                                        <input class="input" type="text" placeholder="Street 2" id="Street2">
+                                                      </div>
+                                                      <p class="help">This field should contain:Room - Flat - Floor - Suite - Unit - Wing - Shop - Office - Block - Off - Opposite - Behind</p>
+                                                    </div>
+                                                    <div class="field">
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="Street 3" id="Street3">
+                                                      </div>
+                                                      <p class="help">This field should contain:Name - Mile - Building Name - Fram - Estate - Area - Phase - Plaza - Complex - Zone - Junction - Plot - Layout - Square</p>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="label">Relationship Type</label>
+                                                        <div class="control">
+                                                          <input class="input" type="text" placeholder="Relationship Type" id="RelationshipType">
+                                                        </div>
+                                                        <p class="help">type (Outlet, Sub Distributor, Supply Point, Key distributor)</p>
+                                                      </div>
+                                                      <div class="field">
+                                                          <label class="label">Sub Channel</label>
+                                                          <div class="control">
+                                                            <input class="input" type="text" placeholder="Sub Channel" id="SubChannel">
+                                                          </div>
+                                                          <p class="help">	Sub Classification of  Retail Outlet</p>
+                                                        </div>
+                                                        <div class="field">
+                                                            <label class="label">Channel</label>
+                                                            <div class="control">
+                                                              <input class="input" type="text" placeholder="Channel" id="Channel">
+                                                            </div>
+                                                            <p class="help">Classification of Retail Outlet</p>
+                                                          </div>
+                                                          <div class="control">
+                                                              <div class="select">
+                                                                <select id="PreferredDay" onChange="Ready()">
+                                                                  <option value="not selected">Preferred Day</option>
+                                                                  <option value="Monday">Monday</option>
+                                                                  <option value="Tueday">Tueday</option>
+                                                                  <option value="Wedneday">Wedneday</option>
+                                                                  <option value="Thursday">Thursday</option>
+                                                                  <option value="Friday">Friday</option>
+                                                                  <option value="Saturday">Saturday</option>
+                                                                  <option value="Sunday">Sunday</option>
+                                                                                                                                
+                                                                </select>
+                                                              </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="field">
+                                                                
+                                                                <div class="control">
+                                                                  <input class="input" type="text" placeholder="Visit Week No" id="visit">
+                                                                </div>
+                                                                <p class="help">Defualt is one "1" except modern trade which can be 2, 0r 3 base on the visit frequency</p>
+                                                              </div>
+
+                              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success" id="saveREC">Save changes</button>
+            <button class="button is-success" id="select">Search Outlet</button>
+            <button class="button is-success" id="updateREC">Update Outlet</button>
+            <button type="reset" class="button" >Reset</button>
+          </footer>
+        </div>
+      </div>
+    
+     
+      
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    
+      <script src="scriptNDC/record.js"></script>
+  </body>
+</html>
